@@ -1,0 +1,49 @@
+.loginFormContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.loginForm, input.formControl {
+    border: 2px solid var(--color-neutral);
+    border-radius: 3px;
+}
+
+.formControl {
+    padding: 10px;
+    width: 95%;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    align-self: center;
+    justify-self: center;
+}
+
+label.formControl {
+    padding: 0 0.5rem;
+}
+
+.loginForm {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 99%;
+    box-shadow: 5px 5px var(--color-lightest);
+    padding: 10px;
+}
+
+.formInputGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    justify-self: center;
+    align-self: center;
+}
+
+@media only screen and (min-width: 300px) {
+    .loginForm {
+        width: 300px;
+    }
+}
