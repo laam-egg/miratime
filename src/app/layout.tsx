@@ -1,4 +1,4 @@
-import globalCSS from "./globals.css";
+import "./global.css";
 
 export const metadata = {
     title: 'Next.js',
@@ -13,7 +13,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <head>
-                <link rel="stylesheet" href={globalCSS}></link>
+                <title>Custom NextJS app</title>
             </head>
             <body>{children}</body>
         </html>

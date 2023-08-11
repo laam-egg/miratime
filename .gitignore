@@ -1,4 +1,7 @@
-.env.local
+.env
+.env.*
+!*.example
+.swc
 
 # THE REST IS FROM: https://piterjov.hashnode.dev/effective-git-ignore-for-react-and-nextjs-applications
 
