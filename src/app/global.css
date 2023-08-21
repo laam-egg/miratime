@@ -65,6 +65,21 @@ button, input[type="button"] {
     align-content: center;
 }
 
+@media only screen and (min-height: 500px) {
+    /*
+     * Be careful: In case the form is too long (in height)
+     * deliberately centering the form could cause its top-
+     * most and bottom-most part hidden by respective sides
+     * of the window.
+     */
+    .mainFormContainer {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
 .mainForm > h1 {
     margin: 10px;
 }
