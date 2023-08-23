@@ -11,6 +11,9 @@ dependencies:
   fetch-json:
     specifier: ^3.2.0
     version: 3.2.0
+  form-data-json-convert:
+    specifier: ^2.2.1
+    version: 2.2.1
   next:
     specifier: ^13.4.13
     version: 13.4.13(@babel/core@7.22.10)(react-dom@18.2.0)(react@18.2.0)
@@ -2078,6 +2081,10 @@ packages:
     dependencies:
       is-callable: 1.2.7
     dev: true
+
+  /form-data-json-convert@2.2.1:
+    resolution: {integrity: sha512-FKdEBt0fnHm9pLdShlr9ZGtnfJKAoIM1dnbxuHrVh2MizGsvQpYiIiQZnSY24wmLxV1XUHxwfP/z45rAEavyjA==}
+    dev: false
 
   /fs.realpath@1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
