@@ -6,10 +6,10 @@ export default function SignupForm() {
     return <div className="mainFormContainer">
     <form className="mainForm" id="signupForm">
         <h1>Sign up</h1>
-        <FormField type="text" id="fullNameInput" placeholder="Full Name" required={true} />
-        <FormField type="email" id="emailInput" placeholder="Email" required={true} />
-        <FormField type="password" id="passwordInput" placeholder="Password" required={true} />
-        <FormField type="password" id="retypePasswordInput" placeholder="Retype Password" required={true} />
+        <FormField type="text" id="fullNameInput" name="name" placeholder="Full Name" required={true} />
+        <FormField type="email" id="emailInput" name="email" placeholder="Email" required={true} />
+        <FormField type="password" id="passwordInput" name="password" placeholder="Password" required={true} />
+        <FormField type="password" id="retypePasswordInput" name="retypedPassword" placeholder="Retype Password" required={true} />
         <SignupFormButtons />
     </form>
     </div>;

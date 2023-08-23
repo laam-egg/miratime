@@ -6,8 +6,8 @@ export default function LoginForm() {
     return <div className="mainFormContainer">
         <form className="mainForm" id="loginForm">
             <h1>Log in</h1>
-            <FormField type="email" id="emailInput" placeholder="Email" required={true} />
-            <FormField type="password" id="passwordInput" placeholder="Password" required={true} />
+            <FormField type="email" id="emailInput" name="email" placeholder="Email" required={true} />
+            <FormField type="password" id="passwordInput" name="password" placeholder="Password" required={true} />
             <LoginFormButtons />
         </form>
     </div>;
