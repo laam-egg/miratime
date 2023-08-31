@@ -52,6 +52,26 @@ class FetchJsonApi {
         return url;
     }
 
+    private qualifyParams(params?: FetchJsonParams | undefined) {
+        return params;
+    }
+
+    private qualifyOptions(options?: FetchJsonOptions | undefined) {
+        if (!options) {
+            options = {};
+        }
+
+        if (!options.headers) {
+            options.headers = {};
+        }
+
+        Object.assign(options.headers, {
+            'X-MIRATIME-XSRF-PROTECTION': '1'
+        });
+
+        return options;
+    }
+
     private trapPromise(p: Promise<any>): Promise<any> {
         return new Promise((resolve, reject) => {
             p
@@ -80,7 +100,7 @@ class FetchJsonApi {
         options?: FetchJsonOptions | undefined
     ): Promise<any> {
         return this.trapPromise(
-            this.fj.get(this.produceUrl(path), params, options)
+            this.fj.get(this.produceUrl(path), this.qualifyParams(params), this.qualifyOptions(options))
         );
     }
 
@@ -90,7 +110,7 @@ class FetchJsonApi {
         options?: FetchJsonOptions | undefined
     ): Promise<any> {
         return this.trapPromise(
-            this.fj.post(this.produceUrl(path), resource, options)
+            this.fj.post(this.produceUrl(path), resource, this.qualifyOptions(options))
         );
     }
 
@@ -100,7 +120,7 @@ class FetchJsonApi {
         options?: FetchJsonOptions | undefined
     ): Promise<any> {
         return this.trapPromise(
-            this.fj.put(this.produceUrl(path), resource, options)
+            this.fj.put(this.produceUrl(path), resource, this.qualifyOptions(options))
         );
     }
 
@@ -110,7 +130,7 @@ class FetchJsonApi {
         options?: FetchJsonOptions | undefined
     ): Promise<any> {
         return this.trapPromise(
-            this.fj.patch(this.produceUrl(path), resource, options)
+            this.fj.patch(this.produceUrl(path), resource, this.qualifyOptions(options))
         );
     }
 
@@ -120,7 +140,7 @@ class FetchJsonApi {
         options?: FetchJsonOptions | undefined
     ): Promise<any> {
         return this.trapPromise(
-            this.fj.delete(this.produceUrl(path), resource, options)
+            this.fj.delete(this.produceUrl(path), resource, this.qualifyOptions(options))
         );
     }
 
@@ -130,7 +150,7 @@ class FetchJsonApi {
         options?: FetchJsonOptions | undefined
     ): Promise<any> {
         return this.trapPromise(
-            this.fj.head(this.produceUrl(path), params, options)
+            this.fj.head(this.produceUrl(path), this.qualifyParams(params), this.qualifyOptions(options))
         );
     }
 }
